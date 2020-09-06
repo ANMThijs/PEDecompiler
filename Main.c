@@ -12,6 +12,7 @@ int main(int argc, char** argv) {
 		COFFHEADER coff = CoffRead(file);
 		OPTHEADER opt = OptHeadRead(file);
 		OHWINSPEC opw = OHWHeadRead(file, opt.magic);
+		OPTDATADIR odd = ODDHeadRead(file);
 
 		fclose(file);
 	}

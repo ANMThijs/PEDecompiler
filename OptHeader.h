@@ -60,6 +60,27 @@ typedef struct OHW_32plus {
 	uint64_t HeapCommitSize;
 } OHW32PLUS;
 
+typedef struct OPT_data_dirs {
+	uint64_t TableExport;
+	uint64_t TableImport;
+	uint64_t TableResource;
+	uint64_t TableException;
+	uint64_t TableCertificate;
+	uint64_t TableBaseReloc;
+	uint64_t Debug;
+	uint64_t Arch;
+	uint64_t GlobalPtr;
+	uint64_t TableTLS;
+	uint64_t TableLoadConfig;
+	uint64_t ImportBound;
+	uint64_t IAT;
+	uint64_t ImportDelayDesc;
+	uint64_t CLRRunheader;
+	uint64_t Reserved;
+} OPTDATADIR;
+
 OPTHEADER OptHeadRead(FILE* file);
 
 OHWINSPEC OHWHeadRead(FILE* file, uint16_t magic);
+
+OPTDATADIR ODDHeadRead(FILE* file);

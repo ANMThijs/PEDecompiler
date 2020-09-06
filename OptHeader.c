@@ -60,4 +60,29 @@ OHWINSPEC OHWHeadRead(FILE* file, uint16_t magic) {
 
 	fread_s(&head.LoadFlags, 4, 4, 1, file);
 	fread_s(&head.RvaandSizecount, 4, 4, 1, file);
+
+	return head;
+}
+
+OPTDATADIR ODDHeadRead(FILE* file) {
+	OPTDATADIR data;
+
+	fread_s(&data.TableExport, 8, 8, 1, file);
+	fread_s(&data.TableImport, 8, 8, 1, file);
+	fread_s(&data.TableResource, 8, 8, 1, file);
+	fread_s(&data.TableException, 8, 8, 1, file);
+	fread_s(&data.TableCertificate, 8, 8, 1, file);
+	fread_s(&data.TableBaseReloc, 8, 8, 1, file);
+	fread_s(&data.Debug, 8, 8, 1, file);
+	fread_s(&data.Arch, 8, 8, 1, file);
+	fread_s(&data.GlobalPtr, 8, 8, 1, file);
+	fread_s(&data.TableTLS, 8, 8, 1, file);
+	fread_s(&data.TableLoadConfig, 8, 8, 1, file);
+	fread_s(&data.ImportBound, 8, 8, 1, file);
+	fread_s(&data.IAT, 8, 8, 1, file);
+	fread_s(&data.ImportDelayDesc, 8, 8, 1, file);
+	fread_s(&data.CLRRunheader, 8, 8, 1, file);
+	fread_s(&data.Reserved, 8, 8, 1, file);
+
+	return data;
 }
