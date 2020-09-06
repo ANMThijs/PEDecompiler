@@ -1,5 +1,6 @@
 #include "Signature.h"
 #include "COFF.h"
+#include "OptHeader.h"
 
 int main(int argc, char** argv) {
 	FILE* file;
@@ -9,6 +10,8 @@ int main(int argc, char** argv) {
 		GetSign(file);
 
 		COFFHEADER coff = CoffRead(file);
+		OPTHEADER opt = OptHeadRead(file);
+		OHWINSPEC opw = OHWHeadRead(file, opt.magic);
 
 		fclose(file);
 	}
