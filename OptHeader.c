@@ -5,7 +5,7 @@ OPTHEADER OptHeadRead(FILE* file) {
 
 	fread_s(&head.magic, 2, 2, 1, file);
 	fread_s(&head.Linkvermaj, 1, 1, 1, file);
-	fread_s(&head.Linkvermin, 4, 4, 1, file);
+	fread_s(&head.Linkvermin, 1, 1, 1, file);
 	fread_s(&head.Codesize, 4, 4, 1, file);
 	fread_s(&head.Initdatasize, 4, 4, 1, file);
 	fread_s(&head.Uninitdatasize, 4, 4, 1, file);

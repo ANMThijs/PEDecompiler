@@ -16,6 +16,26 @@ typedef struct Optional_Header {
 	unsigned int Database;
 } OPTHEADER;
 
+typedef struct OHW_32 {
+	uint32_t ImageBase;
+
+	uint32_t StackReserveSize;
+	uint32_t StackCommitSize;
+
+	uint32_t HeapReserveSize;
+	uint32_t HeapCommitSize;
+} OHW32;
+
+typedef struct OHW_32plus {
+	uint64_t ImageBase;
+
+	uint64_t StackReserveSize;
+	uint64_t StackCommitSize;
+
+	uint64_t HeapReserveSize;
+	uint64_t HeapCommitSize;
+} OHW32PLUS;
+
 typedef struct OH_Window_Specific {
 	OHW32 settings;
 	OHW32PLUS settingsplus;
@@ -39,26 +59,6 @@ typedef struct OH_Window_Specific {
 	uint32_t LoadFlags;
 	uint32_t RvaandSizecount;
 } OHWINSPEC;
-
-typedef struct OHW_32 {
-	uint32_t ImageBase;
-
-	uint32_t StackReserveSize;
-	uint32_t StackCommitSize;
-
-	uint32_t HeapReserveSize;
-	uint32_t HeapCommitSize;
-} OHW32;
-
-typedef struct OHW_32plus {
-	uint64_t ImageBase;
-
-	uint64_t StackReserveSize;
-	uint64_t StackCommitSize;
-
-	uint64_t HeapReserveSize;
-	uint64_t HeapCommitSize;
-} OHW32PLUS;
 
 typedef struct OPT_data_dirs {
 	uint64_t TableExport;

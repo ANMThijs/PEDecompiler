@@ -12,5 +12,9 @@ void GetSign(FILE* file) {
 		ret += c * p;
 	}
 
+	char sign[4];
 	fseek(file, ret, 0L);
+	for (int i = 0; i < 4; i++) {
+		sign[i] = fgetc(file);
+	}
 }
