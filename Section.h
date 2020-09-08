@@ -1,9 +1,11 @@
 #pragma once
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
+#include <stdlib.h>
 
 typedef struct Section {
-	char name[8];
+	char name[9];
 	uint32_t VirtSize;
 	uint32_t VirtAddr;
 	uint32_t RawDataSize;
@@ -16,3 +18,5 @@ typedef struct Section {
 } SECTION;
 
 SECTION SectionRead(FILE* file);
+
+void SectionDump(FILE* file, SECTION* sect);
